@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    /*flex-direction: column;
+flex: 1 1 100%;*/
+}
+
+.content {
+    /*background: #71FA4C;*/
+    justify-content: center;
+    align-content: center;
+}

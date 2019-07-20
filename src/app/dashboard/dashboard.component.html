@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="row col-lg-12">
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" #tref>
+  <div class="row">
+    <div class="col-lg-12 col-md-8 col-sm-12 text-center">
+      <button type="button" class="btn btn-info open text-center" (click)="toggleAccordianAll($event)" act="false">Expand All</button>
+    </div>
+    <div class="col-lg-12 col-md-8 col-sm-12" *ngFor="let item of detail;let i = index;">
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input check" (change)="checked=true" value="{{i}}">Check
+        </label>
+      </div>
+      <button class="accordion friend-list" (click)="toggleAccordian($event, i)">Name: {{item.name}}</button>
+      <div class="panel" hide="!item.isActive">
+        <p class="email">Email: {{item.email}}</p>
+        <span class="changeImg" (mouseover)="change=true" (mouseleave)="change=false">
+          <img class="image" src={{item.image}}/>
+          <button *ngIf="change" type="submit" (click)="changeImage(item.name, item.email, item.image)">Edit Profile</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<button type="submit" (click)="onSubmit()">Logout</button>

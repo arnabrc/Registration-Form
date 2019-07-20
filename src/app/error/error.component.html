@@ -1,0 +1,127 @@
+<div class="alert1 alert-warning" *ngIf="control || group">
+  <ul *ngIf="shouldShowErrors()">
+    <li style="color: red" *ngFor="let error of listOfErrors()">{{error}}</li>
+  </ul>
+</div>
+
+<!--<div class="alert alert-danger" *ngIf="group">
+  <ul *ngIf="shouldShowErrors()">
+    <li style="color: red" *ngFor="let error of listOfErrors()">{{error}}</li>
+  </ul>
+</div>-->
+
+<div class="alert2 alert-danger">
+  <div *ngIf="loginError()">
+    <p style="color: red">{{msg}}</p>
+  </div>
+</div>
+
+<div class="alert3 alert-success">
+  <div *ngIf="success()">
+    <p style="color: red">{{reg}}</p>
+  </div>
+</div>
+
+<!--<div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched) && myform.submitted"
+    class="alert alert-danger">
+  <div *ngIf="firstname.errors.required">
+    First name is required.
+  </div>
+  <div *ngIf="firstname.errors.minLength">
+    First name must be at least 3 characters long.
+  </div>
+  <div *ngIf="firstname.errors.pattern">
+    First name pattern wrong.
+  </div>
+</ul>
+
+<div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched) && myform.submitted"
+  class="alert alert-danger">
+  <div *ngIf="lastname.errors.required">
+    Last name is required.
+  </div>
+  <div *ngIf="lastname.errors.minLength">
+    Last name must be at least 3 characters long.
+  </div>
+  <div *ngIf="lastname.errors.pattern">
+    Last name pattern wrong.
+  </div>
+</div>
+
+<div *ngIf="load.isLoading | async; else notLoading">Loading.....</div>
+<div *ngIf="email.invalid && (email.dirty || email.touched) && myform.submitted"
+  class="alert alert-danger">
+  <div *ngIf="email.errors.required">
+    Email is required.
+  </div>
+  <div *ngIf="email.errors.email">
+    Email Invalid.
+  </div>
+  <div *ngIf="email.errors.pattern">
+    Email pattern wrong.
+  </div>
+  <div *ngIf="profileForm.get('email').status === 'PENDING'">
+    Email checking.....
+  </div>
+  <div *ngIf="profileForm.get('email').errors.emailNotTaken">
+    Email is available to be taken !!!!
+  </div>
+  <div *ngIf="profileForm.get('email').errors && profileForm.get('email').errors.emailTaken">
+    Email is taken !!!!
+  </div>
+</div>
+<ng-template #notLoading></ng-template>
+
+<div *ngIf="profileForm.controls.dob.controls.day.invalid && (profileForm.controls.dob.controls.day.dirty || profileForm.controls.dob.controls.day.touched) && myform.submitted"
+  class="alert alert-danger">
+  <!--<div *ngIf="profileForm.controls.dob.controls.day.errors.required">
+    Day is required.
+  </div>
+  <div *ngIf="profileForm.controls.dob.controls.day.errors.dateCheck">
+    Day is required.
+  </div>
+</div>
+
+<div *ngIf="profileForm.controls.dob.controls.year.invalid && (profileForm.controls.dob.controls.year.dirty || profileForm.controls.dob.controls.year.touched) && myform.submitted"
+  class="alert alert-danger">
+  <!--<div *ngIf="profileForm.controls.dob.controls.year.errors.required">
+    Year is required.
+  </div>
+  <div *ngIf="profileForm.controls.dob.controls.year.errors.dateCheck">
+    Year is required.
+  </div>
+</div>
+
+<div *ngIf="profileForm.controls.passwords.controls.password1 && profileForm.controls.passwords.controls.password1.invalid && (profileForm.controls.passwords.controls.password1.dirty || profileForm.controls.passwords.controls.password1.touched) && myform.submitted"
+  class="alert alert-danger">
+  <div *ngIf="profileForm.controls.passwords.controls.password1.errors.required">
+    Password is required.
+  </div>
+  <div *ngIf="profileForm.controls.passwords.controls.password1.errors.pattern">
+    Wrong password pattern.
+  </div>
+  <div *ngIf="profileForm.controls.passwords.controls.password1.errors.passwordMatch">
+    Passwords are not matching.
+  </div>
+</div>
+
+<div *ngIf="profileForm.controls.passwords.controls.password2 && profileForm.controls.passwords.controls.password2.invalid && (profileForm.controls.passwords.controls.password2.dirty || profileForm.controls.passwords.controls.password2.touched) && myform.submitted"
+  class="alert alert-danger">
+  <div *ngIf="profileForm.controls.passwords.controls.password2.errors.required">
+    Password is required.
+  </div>
+  <div *ngIf="profileForm.controls.passwords.controls.password2.errors.pattern">
+    Wrong password pattern.
+  </div>
+  <div *ngIf="profileForm.controls.passwords.controls.password2.errors.passwordMatch">
+    Passwords are not matching.
+  </div>
+</div>
+
+<p *ngIf="myform.submitted">
+  Form Value: {{ profileForm.value | json }}
+</p>
+
+<p *ngIf="myform.submitted">
+  Form Status: {{ profileForm.status }}
+</p>-->

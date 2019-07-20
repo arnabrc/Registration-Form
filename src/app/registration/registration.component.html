@@ -1,0 +1,316 @@
+<div class="container">
+
+  <div class="row p-0 m-0">
+
+  <div class="col-sm"></div>
+    <!--<div class="alert alert-success" *ngIf="myform.submitted && profileForm.valid">
+      Please click on Login link below for logging in !!!!!
+    </div>-->
+    <!<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #myform="ngForm">
+    <form [formGroup]="profileForm" #myform="ngForm">
+    <app-error *ngIf="myform.submitted && sucReg" reg="Please click on Login link below for logging in !!!!!"></app-error>
+      <div class ="row">
+        <div class="col-md-3">
+          <label>Firstname:</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="firstname" class="form-control" formControlName="firstname" placeholder="FirstName" autofocus>
+        </div>
+      </div>
+      <app-error *ngIf="myform.submitted" [control]="firstname"></app-error>
+      <!--<div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched) && myform.submitted"
+          class="alert alert-danger">
+        <div *ngIf="firstname.errors.required">
+          First name is required.
+        </div>
+        <div *ngIf="firstname.errors.minLength">
+          First name must be at least 3 characters long.
+        </div>
+        <div *ngIf="firstname.errors.pattern">
+          First name pattern wrong.
+        </div>
+      </div>-->
+
+      <br><br>
+      <div class ="row">
+        <div class="col-md-3">
+          <label>Lastname:</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="lastname" class="form-control" formControlName="lastname" placeholder="LastName" required>
+        </div>
+      </div>
+      <app-error *ngIf="myform.submitted" [control]="lastname"></app-error>
+      <!--<div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched) && myform.submitted"
+          class="alert alert-danger">
+        <div *ngIf="lastname.errors.required">
+          Last name is required.
+        </div>
+        <div *ngIf="lastname.errors.minLength">
+          Last name must be at least 3 characters long.
+        </div>
+        <div *ngIf="lastname.errors.pattern">
+          Last name pattern wrong.
+        </div>
+      </div>-->
+
+      <br><br>
+
+      <div class ="row">
+        <div class="col-md-3">
+          <label>Email:</label>
+        </div>
+        <div class="col-md-9">
+          <input type="email" id="email" class="form-control" formControlName="email" placeholder="email">
+        </div>
+      </div>
+      <app-error *ngIf="myform.submitted" [control]="email"></app-error>
+      <!--<div *ngIf="load.isLoading | async; else notLoading">Loading.....</div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched) && myform.submitted"
+          class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+          Email Invalid.
+        </div>
+        <div *ngIf="email.errors.pattern">
+          Email pattern wrong.
+        </div>
+        <div *ngIf="profileForm.get('email').status === 'PENDING'">
+          Email checking.....
+        </div>
+        <div *ngIf="profileForm.get('email').errors.emailNotTaken">
+          Email is available to be taken !!!!
+        </div>
+        <div *ngIf="profileForm.get('email').errors && profileForm.get('email').errors.emailTaken">
+          Email is taken !!!!
+        </div>
+      </div>
+      <ng-template #notLoading></ng-template>-->
+
+      <br><br>
+
+      <div formGroupName="dob">
+
+        <div class ="row">
+          <div class="col-md-3">
+            <label>
+              Day
+            </label>
+          </div>
+          <div class="col-md-9">
+            <select name='day' id='day' class="form-control" formControlName="day">
+              <option value="" selected disabled hidden>Day</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
+              <option value='11'>11</option>
+              <option value='12'>12</option>
+              <option value='13'>13</option>
+              <option value='14'>14</option>
+              <option value='15'>15</option>
+              <option value='16'>16</option>
+              <option value='17'>17</option>
+              <option value='18'>18</option>
+              <option value='19'>19</option>
+              <option value='20'>20</option>
+              <option value='21'>21</option>
+              <option value='22'>22</option>
+              <option value='23'>23</option>
+              <option value='24'>24</option>
+              <option value='25'>25</option>
+              <option value='26'>26</option>
+              <option value='27'>27</option>
+              <option value='28'>28</option>
+              <option value='29'>29</option>
+              <option value='30'>30</option>
+              <option value='31'>31</option>
+            </select>
+          </div>
+        </div>
+          <!--<div *ngIf="profileForm.controls.dob.controls.day.invalid && (profileForm.controls.dob.controls.day.dirty || profileForm.controls.dob.controls.day.touched) && myform.submitted"
+            class="alert alert-danger">
+            <!<div *ngIf="profileForm.controls.dob.controls.day.errors.required">
+              <!Day is required.
+            <!</div>
+            <div *ngIf="profileForm.controls.dob.controls.day.errors.dateCheck">
+              Day is required.
+            </div>
+          </div>
+        </div>-->
+
+        <br/><br/>
+
+        <div class ="row">
+          <div class="col-md-3">
+            <label>month</label>
+          </div>
+          <div class="col-md-9">
+            <select name='month' id='month' class="form-control" formControlName="month">
+              <option value="" selected disabled hidden>Month</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
+              <option value='11'>11</option>
+              <option value='12'>12</option>
+            </select>
+          </div>
+          <!--<div *ngIf="profileForm.controls.dob.controls.month.invalid && (profileForm.controls.dob.controls.month.dirty || profileForm.controls.dob.controls.month.touched) && myform.submitted"
+            class="alert alert-danger">
+            <!<div *ngIf="profileForm.controls.dob.controls.month.errors.required">
+              <!Month is required.
+            <!</div>
+            <div *ngIf="profileForm.controls.dob.controls.month.errors.dateCheck">
+              Month is required.
+            </div>-->
+          </div>
+
+        <br/><br/>
+
+        <div class ="row">
+          <div class="col-md-3">
+            <label>Year</label>
+          </div>
+          <div class="col-md-9">
+            <select name='year' id='year' class="form-control" formControlName="year">
+              <option value="" selected disabled hidden>Year</option>
+              <option value='1990'>1990</option>
+              <option value='1991'>1991</option>
+              <option value='1992'>1992</option>
+              <option value='1993'>1993</option>
+              <option value='1994'>1994</option>
+              <option value='1995'>1995</option>
+              <option value='1996'>1996</option>
+              <option value='1997'>1997</option>
+              <option value='1998'>1998</option>
+              <option value='1999'>1999</option>
+              <option value='2000'>2000</option>
+              <option value='2001'>2001</option>
+              <option value='2002'>2002</option>
+              <option value='2003'>2003</option>
+              <option value='2004'>2004</option>
+              <option value='1962'>2005</option>
+              <option value='2005'>2006</option>
+              <option value='2007'>2007</option>
+              <option value='2008'>2008</option>
+              <option value='2009'>2009</option>
+              <option value='2010'>2010</option>
+              <option value='2011'>2011</option>
+              <option value='2012'>2012</option>
+              <option value='2013'>2013</option>
+              <option value='2014'>2014</option>
+              <option value='2015'>2015</option>
+              <option value='2016'>2016</option>
+              <option value='2017'>2017</option>
+              <option value='2018'>2018</option>
+              <option value='2019'>2019</option>
+            </select>
+          </div>
+          <!--<div *ngIf="profileForm.controls.dob.controls.year.invalid && (profileForm.controls.dob.controls.year.dirty || profileForm.controls.dob.controls.year.touched) && myform.submitted"
+            class="alert alert-danger">
+            <!<div *ngIf="profileForm.controls.dob.controls.year.errors.required">
+              <!Year is required.
+            <!</div>
+            <div *ngIf="profileForm.controls.dob.controls.year.errors.dateCheck">
+              Year is required.
+            </div>
+          </div>-->
+        </div><app-error *ngIf="myform.submitted" [control]="profileForm.controls.dob.controls.year"></app-error>
+        <br/><br/>
+      </div>
+      <app-error *ngIf="myform.submitted" [control]="profileForm.controls.dob" [group]="dob"></app-error>
+
+      <div formGroupName="passwords">
+
+        <div class ="row">
+          <div class="col-md-3">
+            <label>Password:</label>
+          </div>
+          <div class="col-md-9">
+            <input type="password" id="password1" class="form-control" formControlName="password1" placeholder="password" required>
+          </div>
+        </div>
+        <div>
+          <p>Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters</p>
+        </div>
+        <!--<div *ngIf="profileForm.controls.passwords.controls.password1 && profileForm.controls.passwords.controls.password1.invalid && (profileForm.controls.passwords.controls.password1.dirty || profileForm.controls.passwords.controls.password1.touched) && myform.submitted"
+            class="alert alert-danger">
+          <div *ngIf="profileForm.controls.passwords.controls.password1.errors.required">
+            Password is required.
+          </div>
+          <div *ngIf="profileForm.controls.passwords.controls.password1.errors.pattern">
+            Wrong password pattern.
+          </div>
+          <div *ngIf="profileForm.controls.passwords.controls.password1.errors.passwordMatch">
+            Passwords are not matching.
+          </div>
+        </div>-->
+
+        <br><br>
+
+        <div class ="row">
+          <div class="col-md-3">
+            <label>Retype Password:</label>
+          </div>
+          <div class="col-md-9">
+            <input type="password" id="password2" class="form-control" formControlName="password2" placeholder="password" required>
+          </div>
+        </div>
+        <div>
+          <p>Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters</p>
+        </div>
+        <!--<div *ngIf="profileForm.controls.passwords.controls.password2 && profileForm.controls.passwords.controls.password2.invalid && (profileForm.controls.passwords.controls.password2.dirty || profileForm.controls.passwords.controls.password2.touched) && myform.submitted"
+            class="alert alert-danger">
+          <div *ngIf="profileForm.controls.passwords.controls.password2.errors.required">
+            Password is required.
+          </div>
+          <div *ngIf="profileForm.controls.passwords.controls.password2.errors.pattern">
+            Wrong password pattern.
+          </div>
+          <div *ngIf="profileForm.controls.passwords.controls.password2.errors.passwordMatch">
+            Passwords are not matching.
+          </div>
+        </div>-->
+      </div>
+      <app-error *ngIf="myform.submitted" [control]="profileForm.controls.passwords" [group]="passwords"></app-error>
+
+      <br><br>
+
+      <!<button type="submit" [disabled]="!profileForm.valid"><button type="submit" (click)="onSubmit()">Submit</button>
+      <div *ngIf="myform.submitted && profileForm.valid && sucReg">
+        <a class="nav-link" href="login">Login Page</a>
+      </div>
+      <p *ngIf="myform.submitted">
+        Form Value: {{ profileForm.value | json }}
+      </p>
+
+      <br>
+
+      <p *ngIf="myform.submitted">
+        Form Status: {{ profileForm.status }}
+      </p>
+
+    </form>
+
+    <hr>
+
+  </div>
+
+  <div class="col-sm"></div>
+
+</div>
