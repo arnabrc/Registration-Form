@@ -70,7 +70,8 @@ export class LoginComponent implements OnInit {
     // tslint:disable-next-line:forin
     for ( const i in this.users ) {
       const em1 = this.users[i].email;
-      if ( em1 === this.profileFormLogin.value.email ) {
+      const pw1 = this.users[i].password;
+      if ( em1 === this.profileFormLogin.value.email && pw1 === this.profileFormLogin.value.password ) {
         console.log('success');
         if (this.profileFormLogin.valid) {
           this.auth.sendLoginToken(this.profileFormLogin.value.email);

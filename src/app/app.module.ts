@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { RouterModule, Routes } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
@@ -52,8 +52,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
     BrowserAnimationsModule,
     // ToastrModule.forRoot(),
     /*RouterModule.forRoot([
-      { path: 'registration', component: FooterOnlyComponent, children: [{ path: '', component: RegistrationComponent }],
-        pathMatch: 'full', canActivate: [StopRouteGuard],
+      { path: 'registration', component: RegistrationComponent, pathMatch: 'full', canActivate: [StopRouteGuard],
         canDeactivate: [CanDeactivateGuard] },
       { path: 'login', component: LoginComponent, pathMatch: 'full', canDeactivate: [CanDeactivateGuard],
         canActivate: [StopRouteGuard] },
@@ -69,12 +68,13 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
         path: 'registration',
         component: FooterOnlyComponent,
         children: [
-          { path: '', component: RegistrationComponent },
-          /*{ path: '', redirectTo: 'registration', pathMatch: 'full' },*/
-          { path: '*', component: RegistrationComponent },
-          { path: '**', component: RegistrationComponent }
+          {
+            path: '',
+            component: RegistrationComponent
+          }
         ],
-        pathMatch: 'full', canActivate: [StopRouteGuard],
+        pathMatch: 'full',
+        canActivate: [StopRouteGuard],
         canDeactivate: [CanDeactivateGuard]
       },
       {
@@ -83,12 +83,12 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
         children: [
           {
             path: '',
-            component: LoginComponent
+            component: LoginComponent,
+            canDeactivate: [CanDeactivateGuard],
+            canActivate: [StopRouteGuard]
           }
         ],
-        pathMatch: 'full',
-        canDeactivate: [CanDeactivateGuard],
-        canActivate: [StopRouteGuard]
+        pathMatch: 'full'
       },
       {
         path: 'dashboard',
@@ -111,6 +111,22 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
             component: EditComponent
           }
         ],
+        pathMatch: 'full'
+      },
+
+      {
+        path: '',
+        redirectTo: '/registration',
+        pathMatch: 'full'
+      },
+      {
+        path: '*',
+        redirectTo: '/registration',
+        pathMatch: 'full'
+      },
+      {
+        path: '**',
+        redirectTo: '/registration',
         pathMatch: 'full'
       }
     ])
